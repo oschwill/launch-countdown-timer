@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+}
+body main {
+  position: relative;
+  height: 100vh;
+  background: url("../../images/bg-stars.svg") hsl(235, 16%, 14%);
+}
+body main .social-media img {
+  width: 30px;
+  height: 30px;
+  color: wheat;
+}
+body main img {
+  position: fixed;
+  width: 100%;
+  bottom: 1%;
+}
+body main .attribution {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(170, 156, 156);
+  font-size: 1.2rem;
+  text-align: center;
+}
+body main .attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/*# sourceMappingURL=styles.css.map */

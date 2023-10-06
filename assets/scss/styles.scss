@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+
+  main {
+    position: relative;
+    height: 100vh;
+    background: url('../../images/bg-stars.svg') hsl(235, 16%, 14%);
+
+    .social-media {
+      img {
+        width: 30px;
+        height: 30px;
+        color: wheat;
+      }
+    }
+
+    img {
+      position: fixed;
+      width: 100%;
+      bottom: 1%;
+    }
+
+    .attribution {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: rgb(170, 156, 156);
+      font-size: 1.2rem;
+      text-align: center;
+
+      a {
+        color: hsl(228, 45%, 44%);
+      }
+    }
+  }
+}
