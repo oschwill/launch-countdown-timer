@@ -11,11 +11,21 @@
 html {
   font-size: 62.5%;
 }
-html body {
+
+body {
   height: 100vh;
   font-family: RedHat, Arial, Helvetica, sans-serif;
 }
-html body main {
+
+.circle-styles, main .countdown .letter .bottom-letter .top-right-circle, main .countdown .letter .bottom-letter .top-left-circle, main .countdown .letter .top-letter .bottom-right-circle, main .countdown .letter .top-letter .bottom-left-circle {
+  position: absolute;
+  background-color: black;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+}
+
+main {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,16 +35,16 @@ html body main {
   height: 100vh;
   background: url("../../images/bg-stars.svg") hsl(235, 16%, 14%);
 }
-html body main h1 {
+main h1 {
   font-size: 3rem;
   letter-spacing: 10px;
 }
-html body main .countdown {
+main .countdown {
   display: flex;
   gap: 40px;
   font-size: 8rem;
 }
-html body main .countdown .letter {
+main .countdown .letter {
   width: 150px;
   border-radius: 7%;
   display: flex;
@@ -42,93 +52,79 @@ html body main .countdown .letter {
   text-align: center;
   font-weight: 700;
 }
-html body main .countdown .letter .top-letter {
+main .countdown .letter .top-letter {
   position: relative;
   background-color: hsl(236, 21%, 26%);
-  margin-bottom: 2px;
   height: 79px;
+  overflow: hidden;
+  margin-bottom: 2px;
   border-top-right-radius: 15px;
   border-top-left-radius: 15px;
-  overflow: hidden;
 }
-html body main .countdown .letter .top-letter .bottom-left-circle,
-html body main .countdown .letter .top-letter .bottom-right-circle {
-  position: absolute;
-  background-color: black;
-  height: 25px;
-  width: 25px;
-  border-radius: 50%;
+main .countdown .letter .top-letter .bottom-left-circle {
   bottom: -15px;
-}
-html body main .countdown .letter .top-letter .bottom-left-circle {
   left: -15px;
 }
-html body main .countdown .letter .top-letter .bottom-right-circle {
+main .countdown .letter .top-letter .bottom-right-circle {
+  bottom: -15px;
   right: -15px;
 }
-html body main .countdown .letter .top-letter p {
+main .countdown .letter .top-letter p {
   margin-top: 26px;
   color: hsl(345, 95%, 68%);
 }
-html body main .countdown .letter .bottom-letter {
+main .countdown .letter .bottom-letter {
   position: relative;
   background-color: hsl(235, 19%, 40%);
   height: 79px;
+  overflow: hidden;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
-  overflow: hidden;
   box-shadow: 0 12px hsl(234, 17%, 12%);
 }
-html body main .countdown .letter .bottom-letter .top-left-circle,
-html body main .countdown .letter .bottom-letter .top-right-circle {
-  position: absolute;
-  background-color: black;
-  height: 25px;
-  width: 25px;
-  border-radius: 50%;
+main .countdown .letter .bottom-letter .top-left-circle {
   top: -15px;
-}
-html body main .countdown .letter .bottom-letter .top-left-circle {
   left: -15px;
 }
-html body main .countdown .letter .bottom-letter .top-right-circle {
+main .countdown .letter .bottom-letter .top-right-circle {
+  top: -15px;
   right: -15px;
 }
-html body main .countdown .letter .bottom-letter p {
+main .countdown .letter .bottom-letter p {
   margin-top: -53px;
-  color: hsl(345, 92%, 72%);
+  color: hsl(345, 95%, 68%);
 }
-html body main .countdown .letter .description {
+main .countdown .letter .description {
   color: hsl(237, 18%, 59%);
   font-size: 2rem;
   text-align: center;
   margin-top: 25px;
 }
-html body main .output {
+main .output {
   font-size: 5rem;
   font-weight: 800;
   color: aquamarine;
 }
-html body main .social-media {
+main .social-media {
   z-index: 1;
   display: flex;
   gap: 30px;
 }
-html body main .social-media img {
+main .social-media img {
   cursor: pointer;
   width: 30px;
   height: 30px;
 }
-html body main .social-media img:hover {
+main .social-media img:hover {
   color: hsl(345, 95%, 68%);
   filter: invert(56%) sepia(37%) saturate(3649%) hue-rotate(310deg) brightness(100%) contrast(98%);
 }
-html body main > img {
+main > img {
   position: fixed;
   width: 100%;
   bottom: 1%;
 }
-html body main .attribution {
+main .attribution {
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -136,7 +132,7 @@ html body main .attribution {
   font-size: 1.2rem;
   text-align: center;
 }
-html body main .attribution a {
+main .attribution a {
   color: hsl(228, 45%, 44%);
 }
 

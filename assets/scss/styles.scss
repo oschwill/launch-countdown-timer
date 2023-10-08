@@ -1,163 +1,132 @@
-@font-face {
-  font-family: RedHat;
-  src: url('../fonts/RedHatText-VariableFont_wght.ttf');
-}
+@import './base';
+@import './variables';
+@import './mixins';
+@import './extends';
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  color: $main-font-color;
+  position: relative;
+  height: 100vh;
+  background: url('../../images/bg-stars.svg') $main-background-color;
 
-html {
-  font-size: 62.5%;
+  h1 {
+    font-size: 3rem;
+    letter-spacing: 10px;
+  }
 
-  body {
-    height: 100vh;
-    font-family: RedHat, Arial, Helvetica, sans-serif;
-
-    main {
+  .countdown {
+    display: flex;
+    gap: 40px;
+    font-size: 8rem;
+    .letter {
+      width: 150px;
+      border-radius: 7%;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: space-around;
-      color: hsl(0, 0%, 100%);
-      position: relative;
-      height: 100vh;
-      background: url('../../images/bg-stars.svg') hsl(235, 16%, 14%);
+      text-align: center;
+      font-weight: 700;
 
-      h1 {
-        font-size: 3rem;
-        letter-spacing: 10px;
+      .top-letter {
+        @include letter-build(relative, $top-letter-background-color, 79px, hidden);
+
+        margin-bottom: 2px;
+        border-top-right-radius: 15px;
+        border-top-left-radius: 15px;
+
+        .bottom-left-circle {
+          @extend .circle-styles;
+          bottom: -15px;
+          left: -15px;
+        }
+
+        .bottom-right-circle {
+          @extend .circle-styles;
+          bottom: -15px;
+          right: -15px;
+        }
+
+        p {
+          margin-top: 26px;
+          color: $letter-font-color;
+        }
       }
+      .bottom-letter {
+        @include letter-build(relative, $bottom-letter-background-color, 79px, hidden);
 
-      .countdown {
-        display: flex;
-        gap: 40px;
-        font-size: 8rem;
-        .letter {
-          width: 150px;
-          border-radius: 7%;
-          display: flex;
-          flex-direction: column;
-          text-align: center;
-          font-weight: 700;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        box-shadow: 0 12px $letter-box-shadow-color;
 
-          .top-letter {
-            position: relative;
-            background-color: hsl(236, 21%, 26%);
-            margin-bottom: 2px;
-            height: 79px;
-            border-top-right-radius: 15px;
-            border-top-left-radius: 15px;
-            overflow: hidden;
+        .top-left-circle {
+          @extend .circle-styles;
+          top: -15px;
+          left: -15px;
+        }
 
-            .bottom-left-circle,
-            .bottom-right-circle {
-              position: absolute;
-              background-color: black;
-              height: 25px;
-              width: 25px;
-              border-radius: 50%;
-              bottom: -15px;
-            }
+        .top-right-circle {
+          @extend .circle-styles;
+          top: -15px;
+          right: -15px;
+        }
 
-            .bottom-left-circle {
-              left: -15px;
-            }
-
-            .bottom-right-circle {
-              right: -15px;
-            }
-
-            p {
-              margin-top: 26px;
-              color: hsl(345, 95%, 68%);
-            }
-          }
-          .bottom-letter {
-            position: relative;
-            background-color: hsl(235, 19%, 40%);
-            height: 79px;
-            border-bottom-left-radius: 15px;
-            border-bottom-right-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 12px hsl(234, 17%, 12%);
-
-            .top-left-circle,
-            .top-right-circle {
-              position: absolute;
-              background-color: black;
-              height: 25px;
-              width: 25px;
-              border-radius: 50%;
-              top: -15px;
-            }
-
-            .top-left-circle {
-              left: -15px;
-            }
-
-            .top-right-circle {
-              right: -15px;
-            }
-
-            p {
-              margin-top: -53px;
-              color: hsl(345, 92%, 72%);
-            }
-          }
-
-          .description {
-            color: hsl(237, 18%, 59%);
-            font-size: 2rem;
-            text-align: center;
-            margin-top: 25px;
-          }
+        p {
+          margin-top: -53px;
+          color: $letter-font-color;
         }
       }
 
-      .output {
-        font-size: 5rem;
-        font-weight: 800;
-        color: aquamarine;
-      }
-
-      .social-media {
-        z-index: 1;
-        display: flex;
-        gap: 30px;
-        img {
-          cursor: pointer;
-          width: 30px;
-          height: 30px;
-
-          &:hover {
-            color: hsl(345, 95%, 68%);
-            filter: invert(56%) sepia(37%) saturate(3649%) hue-rotate(310deg) brightness(100%)
-              contrast(98%);
-          }
-        }
-      }
-
-      > img {
-        position: fixed;
-        width: 100%;
-        bottom: 1%;
-      }
-
-      .attribution {
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        background-color: rgb(170, 156, 156);
-        font-size: 1.2rem;
+      .description {
+        color: $description-font-color;
+        font-size: 2rem;
         text-align: center;
-
-        a {
-          color: hsl(228, 45%, 44%);
-        }
+        margin-top: 25px;
       }
+    }
+  }
+
+  .output {
+    font-size: 5rem;
+    font-weight: 800;
+    color: $output-font-color;
+  }
+
+  .social-media {
+    z-index: 1;
+    display: flex;
+    gap: 30px;
+    img {
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+
+      &:hover {
+        color: $letter-font-color;
+        filter: invert(56%) sepia(37%) saturate(3649%) hue-rotate(310deg) brightness(100%)
+          contrast(98%);
+      }
+    }
+  }
+
+  > img {
+    position: fixed;
+    width: 100%;
+    bottom: 1%;
+  }
+
+  .attribution {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: $attribution-background-color;
+    font-size: 1.2rem;
+    text-align: center;
+
+    a {
+      color: $attribution-link-color;
     }
   }
 }

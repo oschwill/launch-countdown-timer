@@ -1,0 +1,6 @@
+@mixin letter-build($position, $bg-color, $height, $overflow) {
+  position: $position;
+  background-color: $bg-color;
+  height: $height;
+  overflow: $overflow;
+}
