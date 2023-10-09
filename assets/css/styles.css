@@ -33,7 +33,7 @@ main {
   color: hsl(0, 0%, 100%);
   position: relative;
   height: 100vh;
-  background: url("../../images/bg-stars.svg") hsl(235, 16%, 14%);
+  background: url("../images/bg-stars.svg") hsl(235, 16%, 14%);
 }
 main h1 {
   font-size: 3rem;
