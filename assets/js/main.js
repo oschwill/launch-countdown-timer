@@ -9,7 +9,7 @@ const topLetter = document.querySelectorAll('.top-letter');
 const bottomLetter = document.querySelectorAll('.bottom-letter');
 
 /* PROPERTIES */
-let countDownDate = new Date('Feb 7, 2024 00:00:00').getTime();
+let countDownDate = new Date('May 31, 2025 00:00:00').getTime();
 let milliSecond = 1000;
 let animSecond = 250;
 let animSecondDelay = 750;
